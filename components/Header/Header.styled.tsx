@@ -8,8 +8,7 @@ const Title = styled("span", {
   fontWeight: "500",
 });
 
-const Wrapper = styled("header", {
-  position: "fixed",
+const Wrapper = styled("div", {
   zIndex: "2",
   top: "0",
   width: "calc(100% - 4rem)",

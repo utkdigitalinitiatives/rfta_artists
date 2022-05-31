@@ -8,6 +8,9 @@ export default function Layout({ children }) {
   return (
     <>
       <Head>
+        <script crossOrigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+        <script crossOrigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+        <script async src="https://www.lib.utk.edu/assets/universal-header.js"></script>
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
@@ -22,9 +25,10 @@ export default function Layout({ children }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
+      <header id="utk-lib-header"></header>
       <Header />
       <main>{children}</main>
-      <footer></footer>
+      <footer id="utk-lib-footer"></footer>
     </>
   );
 }
