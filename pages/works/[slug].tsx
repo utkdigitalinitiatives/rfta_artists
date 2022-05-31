@@ -13,6 +13,9 @@ import Related from "@/components/Related/Related";
 
 export default function Manifest({ manifest }) {
   const { id, label, metadata, requiredStatement, summary } = manifest;
+  const artist = metadata.filter(function (x) {
+    if(x.label.en[0] == "Artist" ){return x.value.en[0]}
+  } )[0].value.en[0];
 
   return (
     <Layout>
@@ -29,7 +32,6 @@ export default function Manifest({ manifest }) {
       >
         <div style={{ padding: "0 1.618rem 2rem" }}>
           <Label label={label} as="h1" />
-          <Summary summary={summary} />
           <Metadata metadata={metadata} />
           <RequiredStatement requiredStatement={requiredStatement} />
         </div>
@@ -42,7 +44,7 @@ export default function Manifest({ manifest }) {
           padding: "0 1.618rem",
         }}
       >
-        <Related label={label} />
+        <Related label={label} artist={artist} />
       </section>
     </Layout>
   );
