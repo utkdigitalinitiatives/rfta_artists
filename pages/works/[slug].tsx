@@ -32,7 +32,6 @@ export default function Manifest({ manifest }) {
       >
         <div style={{ padding: "0 1.618rem 2rem" }}>
           <Label label={label} as="h1" />
-          <Summary summary={summary} />
           <Metadata metadata={metadata} />
           <RequiredStatement requiredStatement={requiredStatement} />
         </div>
