@@ -1,0 +1,62 @@
+html {
+  font-family: $sans;
+  font-size: 16px;
+}
+
+body {
+  font-size: 1em;
+  letter-spacing: 0.5px;
+  margin: 0 auto;
+  word-wrap: break-word;
+  font-kerning: normal;
+  -webkit-font-smoothing: subpixel-antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  -moz-font-feature-settings: "kern", "liga", "clig", "calt";
+  -ms-font-feature-settings: "kern", "liga", "clig", "calt";
+  -webkit-font-feature-settings: "kern", "liga", "clig", "calt";
+  font-feature-settings: "kern", "liga", "clig", "calt";
+  background-position: 0 0;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-family: $sans;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-weight: 400;
+  }
+
+  #gatsby-focus-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: calc(100vh - 11px);
+    border-top: 11px solid $accent;
+  }
+}
+
+* {
+  box-sizing: initial;
+}
+
+.canopy {
+  background: rgb(255, 255, 255);
+
+  > div > main {
+    .canopy-main {
+      display: flex;
+      border-top: 1px solid $muted;
+      border-bottom: 1px solid $muted;
+
+      .canopy-about {
+        flex-grow: 1;
+        padding: 2rem;
+      }
+    }
+  }
+}
+
+.canopy-panel {
+  background-color: white;
+}

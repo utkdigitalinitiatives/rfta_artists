@@ -1,0 +1,82 @@
+.canopy-tabs--list div::after {
+  border-bottom: 1px solid $offwhite;
+}
+
+.canopy-tabs {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+
+  &--list {
+    display: flex;
+    justify-content: flex-start;
+    border-bottom: 3px solid transparent;
+    flex-shrink: 0;
+    border-bottom: 1px solid $offwhite;
+    border-top: 1px solid $offwhite;
+
+    &:hover div[data-state="active"] {
+      &::after {
+        width: 0;
+      }
+
+      &:hover::after {
+        width: 100%;
+      }
+    }
+
+    .tab-labels {
+      flex: 1;
+      border-right: 1px solid $offwhite;
+      border-left: 1px solid $offwhite;
+    }
+
+    div {
+      flex-grow: 0;
+      flex-shrink: 0;
+      padding: 0.5rem 0.75rem;
+      font-family: $sans;
+      font-weight: 600;
+      font-size: 0.833em;
+      cursor: pointer;
+      color: $primary;
+      background: transparent;
+      transition: all 200ms ease-in-out;
+      position: relative;
+
+      &::after {
+        content: "";
+        width: 0;
+        height: 3px;
+        position: absolute;
+        bottom: -3px;
+        left: 0;
+        background-color: transparent;
+        transition: all 200ms ease-in-out;
+      }
+
+      &:hover {
+        &::after {
+          width: 100%;
+          background-color: $accent;
+        }
+      }
+
+      &[data-state="active"] {
+        color: $primary;
+
+        &::after {
+          width: 100%;
+          background-color: $accent;
+        }
+      }
+    }
+  }
+
+  &--content {
+    line-height: 1.53em;
+    position: relative;
+    height: calc(100% - 2rem);
+    overflow: scroll;
+  }
+}
